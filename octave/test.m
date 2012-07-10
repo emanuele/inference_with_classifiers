@@ -38,6 +38,5 @@ for i = linspace(1,length(partitions),length(partitions))
     for j = linspace(1,length(part_name),length(part_name))
         name_2_disp = strcat(name_2_disp,part_name{j});
     end
-    fprintf('Partition: [%s], logp_H: %.8e\n', name_2_disp, logp_X_given_H_sorted(i))
-    fprintf('Partition: [%s], postP: %.8e\n', name_2_disp, exp(log_posterior_H_given_X(IX(i))))
+    fprintf('Partition: [%s], logp_H: %.5e,  postP: %.5e\n', name_2_disp, logp_X_given_H_sorted(i), exp(log_posterior_H_given_X(IX(i))))
 end
