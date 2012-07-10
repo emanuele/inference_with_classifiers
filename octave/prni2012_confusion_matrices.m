@@ -4,6 +4,8 @@ function PRNI2012_CMs = prni2012_confusion_matrices()
 %%% Testing Multiclass Pattern Discrimination
 %%% p.11
 
+% Example of confusion matrices.
+
 % Discrimination of all classes A, B, and C.
 PRNI2012_CMs.pred_all = [
     40 10 10;
@@ -12,11 +14,11 @@ PRNI2012_CMs.pred_all = [
 
 % No discrimination between A and B, but between [A,B] and C.
 PRNI2012_CMs.pred_group = [
-     30 30 0;
-     30 30 0;
-     0 0 60];
+     30 30  0;
+     30 30  0;
+      0  0 60];
  
-% No discrimination between A, B, and C
+% No discrimination between A, B, and C.
 PRNI2012_CMs.pred_random = [
     20 20 20;
     20 20 20;

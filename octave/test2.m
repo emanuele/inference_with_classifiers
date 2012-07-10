@@ -10,7 +10,7 @@ for X_cell = Xs
     X = X_cell{1}
     partitions = SetPartition(size(X,1));
 
-    alpha = ones(size(X));
+    alpha = ones(size(X))
 
     % uniform prior on hypotheses: p(H_i)
     prior_H = ones(1,length(partitions)) / length(partitions);
@@ -43,5 +43,5 @@ for X_cell = Xs
         end
 	fprintf('Partition: [%s], logp_H: %.5e,  postP: %.5e\n', name_2_disp, logp_X_given_H_sorted(i), exp(log_posterior_H_given_X(IX(i))))
     end
-
+    fprintf('\n\n')
 end

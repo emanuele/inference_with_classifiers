@@ -2,12 +2,12 @@
 
 ICANN2011_CMs = icann2011_confusion_matrices();
 
-X = ICANN2011_CMs.tu;
+X = ICANN2011_CMs.tu
 
 addpath('.:SetPartFolder')
 partitions = SetPartition(size(X,1));
 
-alpha = ones(size(X));
+alpha = ones(size(X))
 
 % uniform prior on hypotheses: p(H_i)
 prior_H = ones(1,length(partitions)) / length(partitions);
