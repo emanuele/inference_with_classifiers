@@ -15,6 +15,13 @@ def logaddexp(loga, logb):
     # return loga + np.log(1 + np.exp(logb - loga))
     return loga + np.log1p(np.exp(logb - loga))
 
+
+def logaddexp_vector(logvector, axis=-1):
+    """ log(v)1 + ... + v_n) given logvector=[log(v_1),...,log(v_n)].
+    """
+    return np.logaddexp.reduce(logvector)
+
+
 def logsubexp(loga, logb):
     """ log(a - b) given log(a) and log(b).
     
