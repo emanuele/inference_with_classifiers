@@ -3,7 +3,7 @@ from partial_independence import compute_logp_H
 from icann2011_confusion_matrices import tu
 from partitioner import Partition
 
-def compute_log_posteriors(X, partitions=None, alpha=None, prior_H=None):
+def compute_log_posteriors(X, partitions=None, alpha=None, prior_H=None, verbose=False):
     """Compute log of p(H|X) for all the Hs, i.e. the partitions, of
     the classes, given the confusion matrix X, the Dirichlet prior
     alpha and the hypotheses' prior p(H) (prior_H).
@@ -11,10 +11,10 @@ def compute_log_posteriors(X, partitions=None, alpha=None, prior_H=None):
     if partitions is None:
         partitions = list(Partition(range(X.shape[0])))
     if alpha is None:
-        print "Assuming non-informative Dirichlet prior."
+        if verbose: print "Assuming non-informative Dirichlet prior."
         alpha = np.ones(X.shape)
     if prior_H is None:
-        print "Assuming uniform prior for p(H_i)."
+        if verbose: print "Assuming uniform prior for p(H_i)."
         prior_H = np.ones(len(partitions)) / len(partitions)
     logp_X_given_H = np.zeros(len(partitions))    
     for i, partition in enumerate(partitions):
