@@ -10,13 +10,16 @@ def compute_log_posteriors(X, partitions=None, alpha=None, prior_H=None, verbose
     """
     if partitions is None:
         partitions = list(Partition(range(X.shape[0])))
+
     if alpha is None:
         if verbose: print "Assuming non-informative Dirichlet prior."
         alpha = np.ones(X.shape)
+
     if prior_H is None:
         if verbose: print "Assuming uniform prior for p(H_i)."
         prior_H = np.ones(len(partitions)) / len(partitions)
-    logp_X_given_H = np.zeros(len(partitions))    
+
+    logp_X_given_H = np.zeros(len(partitions))
     for i, partition in enumerate(partitions):
         logp_X_given_H[i] = compute_logp_H(X, partition, alpha=alpha)
 
