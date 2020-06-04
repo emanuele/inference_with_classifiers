@@ -6,7 +6,7 @@ See: http://en.wikipedia.org/wiki/Multivariate_P%C3%B3lya_distribution
 """
 
 import numpy as np
-from scipy import factorial, comb as binomial_coefficient
+from scipy.misc import factorial, comb as binomial_coefficient
 from scipy.special import gamma, gammaln
 from numpy.random import dirichlet
 from logvar import logmean
